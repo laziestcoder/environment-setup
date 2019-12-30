@@ -1,0 +1,41 @@
+#my aliases
+alias cl="clear"
+alias dcstart="docker-compose up -d"
+alias dcstop="docker-compose stop"
+alias dcedit="vim docker-compose.yml"
+alias bashedit="cd && vim .bashrc"
+alias bashrs="cd && source .bashrc"
+alias pf="poweroff"
+
+#git aliases
+
+alias gs="git status"
+alias gb="git branch"
+alias grl="git reflog"
+alias gl="git log"
+alias ga="git add ."
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gps="git push"
+alias gpl="git pull"
+
+gmerge (){
+	git checkout $1 && git merge $2 && git pull && git push && git checkout $2 
+}
+
+#my alias function
+goto () {
+	cd ~/workspace/
+	if [ -d "$1" ]; then
+           cd "$1"
+	   if [ -d "project" ]; then
+		cd project/
+     	   else
+   	      echo "Directory 'Project' missing";
+	   fi	      
+	else
+	   echo "Directory $1 not found." 
+	fi
+}
+
+
