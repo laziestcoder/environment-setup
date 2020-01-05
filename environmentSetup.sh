@@ -9,6 +9,7 @@ sudo apt install snapd
 sudo apt install vim && \
 
 #Tweak Tool
+sudo apt install unity
 sudo apt-get install unity-tweak-tool gnome-tweak-tool
 
 #Chrome
