@@ -69,7 +69,7 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 #Oracle JDK
 cd ~/Downloads && \
 sudo mkdir -p /var/cache/oracle-jdk11-installer-local/ && \
-sudo cp jdk-11.0.5_linux-x64_bin.tar.gz /var/cache/oracle-jdk11-installer-local/ && \
+sudo cp jdk-11.*.tar.gz /var/cache/oracle-jdk11-installer-local/ && \
 sudo add-apt-repository ppa:linuxuprising/java && \
 sudo apt install oracle-java11-set-default-local && \
 
