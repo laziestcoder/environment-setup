@@ -32,6 +32,8 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb && \
 #Intellij-Idea
 sudo snap install intellij-idea-ultimate --classic && \
 
+#PHPStorm
+sudo snap install phpstorm --classic && \
 #slack
 sudo snap install slack --classic && \
 
