@@ -75,6 +75,8 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && 
 
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && \
 
+sudo apt-get update
+
 #Oracle JDK
 while true; do
     read -p "Do you have the oracle jdk.11.*.tar.gz in your 'Downloads' folder? (Y/N): " yn
@@ -100,6 +102,9 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-
       -o /usr/local/bin/docker-compose && \
 sudo chmod +x /usr/local/bin/docker-compose && \
 sudo ln -fs /usr/local/bin/docker-compose /usr/bin/docker-compose && \
+
+
+#ngrok
 
 sudo apt update -y && sudo apt upgrade -y && \
 
