@@ -77,7 +77,7 @@ esac
 #GIT
 read -p "Do you want to Git? (Y/N): " yn
 case $yn in
-[Yy]*) sudo snap install git ;;
+[Yy]*) sudo apt install git ;;
 [Nn]*) echo "Thank you. Git Installation aborted." ;;
 esac
 
