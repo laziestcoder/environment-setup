@@ -47,42 +47,50 @@ case $yn in
 esac
 
 #Intellij-Idea
-read -p "Do you want to Intellij-Idea-Ultimate --classic? (Y/N): " yn
+read -p "Do you want to install Intellij-Idea-Ultimate --classic? (Y/N): " yn
 case $yn in
 [Yy]*) sudo snap install intellij-idea-ultimate --classic ;;
 [Nn]*) echo "Thank you. Intellij-Idea-Ultimate Installation aborted." ;;
 esac
 
 #PHPStorm
-read -p "Do you want to PHPStorm --classic? (Y/N): " yn
+read -p "Do you want to install PHPStorm --classic? (Y/N): " yn
 case $yn in
 [Yy]*) sudo snap install phpstorm --classic ;;
 [Nn]*) echo "Thank you. PHPStorm Installation aborted." ;;
 esac
 
 #slack
-read -p "Do you want to Slack --classic? (Y/N): " yn
+read -p "Do you want to install Slack --classic? (Y/N): " yn
 case $yn in
 [Yy]*) sudo snap install slack --classic ;;
 [Nn]*) echo "Thank you. Slack Installation aborted." ;;
 esac
 
+#SKYPE
+read -p "Do you want to install Skype ? (Y/N): " yn
+case $yn in
+[Yy]*) wget https://go.skype.com/skypeforlinux-64.deb && \
+       sudo apt install ./skypeforlinux-64.deb ;;
+[Nn]*) echo "Thank you. Skype Installation aborted." ;;
+esac
+
 #Python3
-read -p "Do you want to Python38? (Y/N): " yn
+read -p "Do you want to install Python38? (Y/N): " yn
 case $yn in
 [Yy]*) sudo snap install python38 ;;
 [Nn]*) echo "Thank you. Python38 Installation aborted." ;;
 esac
 
 #GIT
-read -p "Do you want to Git? (Y/N): " yn
+read -p "Do you want to install Git? (Y/N): " yn
 case $yn in
 [Yy]*) sudo apt install git ;;
 [Nn]*) echo "Thank you. Git Installation aborted." ;;
 esac
 
 #Dukto
-read -p "Do you want to Dukto? (Y/N): " yn
+read -p "Do you want to install Dukto? (Y/N): " yn
 case $yn in
 [Yy]*) sudo apt install gdebi &&
   wget download.opensuse.org/repositories/home:/colomboem/xUbuntu_12.04/amd64/dukto_6.0-1_amd64.deb &&
@@ -148,14 +156,14 @@ while true; do
 done
 
 #PIP
-read -p "Do you want to Python3 PIP? (Y/N): " yn
+read -p "Do you want to install Python3 PIP? (Y/N): " yn
 case $yn in
 [Yy]*) sudo apt install python3-pip -y ;;
 [Nn]*) echo "Thank you. Python3 PIP Installation aborted." ;;
 esac
 
 #NodeJS and NPM
-read -p "Do you want to NodeJs and NPM? (Y/N): " yn
+read -p "Do you want to install NodeJs and NPM? (Y/N): " yn
 case $yn in
 [Yy]*) sudo apt install nodejs -y && sudo apt install npm -y ;;
 [Nn]*) echo "Thank you. NodeJs and NPM Installation aborted." ;;
@@ -177,21 +185,21 @@ case $yn in
 esac
 
 #Postman
-read -p "Do you want to Postman? (Y/N): " yn
+read -p "Do you want to install Postman? (Y/N): " yn
 case $yn in
 [Yy]*) sudo snap install postman ;;
 [Nn]*) echo "Thank you. Postman Installation aborted." ;;
 esac
 
 #Docker
-read -p "Do you want to Docker? (Y/N): " yn
+read -p "Do you want to install Docker? (Y/N): " yn
 case $yn in
 [Yy]*) sudo apt-get install docker-ce -y && apt-cache madison docker-ce ;;
 [Nn]*) echo "Thank you. Docker Installation aborted." ;;
 esac
 
 #Docker-Compose
-read -p "Do you want to Docker-Compose? (Y/N): " yn
+read -p "Do you want to install Docker-Compose? (Y/N): " yn
 case $yn in
 [Yy]*) sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" \
   -o /usr/local/bin/docker-compose &&
