@@ -98,63 +98,6 @@ case $yn in
 [Nn]*) echo "Thank you. Dukto Installation aborted." ;;
 esac
 
-#Download Oracle JDK 11
-while true; do
-  read -p "Do you want to download the oracle jdk.11.*.tar.gz in your 'Downloads' folder? (Y/N): " yn
-  case $yn in
-  [Yy]*)
-    wget --load-cookies /tmp/cookies.txt \
-    "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1DKQFlXWmcbMeP9w-UcGyUVSPbXgUFDg3' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1DKQFlXWmcbMeP9w-UcGyUVSPbXgUFDg3" \
-    -O jdk-11.0.6_linux-x64_bin.tar.gz && rm -rf /tmp/cookies.txt
-    break;;
-  [Nn]*)
-    echo "Downloaded the oracle jdk.11.0.6.tar.gz canceled. Thank you."
-    break
-    ;;
-  esac
-done
-
-#Oracle JDK
-while true; do
-  read -p "Do you have want to install oracle jdk.11.*.tar.gz? (Y/N): " yn
-  case $yn in
-  [Yy]*)
-      sudo mkdir -p /var/cache/oracle-jdk11-installer-local/ &&
-      sudo cp jdk-11.*.tar.gz /var/cache/oracle-jdk11-installer-local/ &&
-      sudo add-apt-repository ppa:linuxuprising/java &&
-      sudo apt install oracle-java11-set-default-local
-    break
-    ;;
-  [Nn]*)
-    echo "Please download the oracle jdk.11.*.tar.gz and run the script angain. Thank you."
-    break
-    ;;
-  esac
-done
-
-#Maven
-while true; do
-  read -p "Do you have JAVA installed in your system? (Y/N): " yn
-  case $yn in
-  [Yy]*)
-    sudo apt install maven -y &&
-      sudo touch mavenenv.sh &&
-      sudo chmod 777 mavenenv.sh &&
-      sudo echo "export JAVA_HOME=/usr/lib/jvm/default-java" >mavenenv.sh &&
-      sudo echo "export M2_HOME=/opt/maven" >>mavenenv.sh &&
-      sudo echo "export PATH=${M2_HOME}/bin:${PATH}" >>mavenenv.sh &&
-      sudo mv mavenenv.sh /etc/profile.d/mavenenv.sh &&
-      sudo chmod +x /etc/profile.d/mavenenv.sh &&
-      source /etc/profile.d/mavenenv.sh
-    break
-    ;;
-  [Nn]*)
-    echo "Please download JAVA and install then run the script angain. Thank you."
-    break
-    ;;
-  esac
-done
-
 #PIP
 read -p "Do you want to install Python3 PIP? (Y/N): " yn
 case $yn in
