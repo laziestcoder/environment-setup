@@ -1,9 +1,7 @@
 .idea
-dukto_6.0-1_amd64.deb
-jdk-11.0.5_linux-x64_bin.tar.gz
-google-chrome-stable_current_amd64.deb
-*.deb
-*.exe
+*.tar.gz*
 *.deb*
 *.exe*
-dukto_6.0-1_amd64.deb.1
+*.jar*
+*.zip*
+*.gz*

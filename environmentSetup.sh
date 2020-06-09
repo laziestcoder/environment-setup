@@ -1,9 +1,9 @@
 #!/bin/bash
 
-read -p "This script downloads and installs various softwares. Please check the script file before starting.
+read -p "This script downloads and installs various software. Please check the script file before starting.
 Do you want to continue? (Y/N): " yn
 case $yn in
-[Yy]*) echo "Thank you for continuting." ;;
+[Yy]*) echo "Thank you for continuing." ;;
 [Nn]*)
   echo "Thank you. Installation aborted."
   exit
@@ -34,7 +34,7 @@ case $yn in
   #gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode FIXED
   #gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 64
   #gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true;;
-  echo "Installation Unity-Tweak-Tool successfull." ;;
+  echo "Installation Unity-Tweak-Tool successful." ;;
 [Nn]*) echo "Thank you. Unity-Tweak-Tool Installation aborted." ;;
 esac
 

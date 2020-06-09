@@ -7,4 +7,4 @@ sudo apt-get install -f
 ibus restart
 
 
-#Settings > Region and language > Add an input source > Bangla > Bengali (Avro Phonetic)
+echo "Settings > Region and language > Add an input source > Bangla > Bengali (Avro Phonetic)"
