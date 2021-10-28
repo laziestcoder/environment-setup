@@ -1,8 +1,10 @@
-wget https://github.com/maateen/avro/releases/download/v2.1/avro_2.1-3_all.deb
+sudo apt install ibus-avro
 
-sudo dpkg -i avro_2*.deb
+#wget https://github.com/maateen/avro/releases/download/v2.1/avro_2.1-3_all.deb
 
-sudo apt-get install -f
+#sudo dpkg -i avro_2*.deb
+
+#sudo apt-get install -f
 
 ibus restart
 
