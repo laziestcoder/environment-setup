@@ -13,9 +13,6 @@ esac
 echo "Installing snapd ..."
 sudo apt install snapd
 
-#open JDK
-#sudo apt install openjdk-11-jre-headless && sudo apt install default-jre && \
-
 #VIM
 read -p "Do you want to install VIM? (Y/N): " yn
 case $yn in
@@ -134,10 +131,7 @@ case $yn in
 [Nn]*) echo "Thank you. Postman Installation aborted." ;;
 esac
 
-#ngrok
-#write installation commands for ngrok
-
 echo "Updating system and installing upgraded files ..."
-sudo apt update -y && sudo apt upgrade -y &&
+sudo apt update -y && sudo apt upgrade -y && sudo apt full-upgrade -y && 
   echo "Installation Successful."
 echo "Thank You for Using Shell Script."
