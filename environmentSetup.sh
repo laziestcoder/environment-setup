@@ -86,15 +86,6 @@ case $yn in
 [Nn]*) echo "Thank you. Git Installation aborted." ;;
 esac
 
-#Dukto
-read -p "Do you want to install Dukto? (Y/N): " yn
-case $yn in
-[Yy]*) sudo apt install gdebi &&
-  wget download.opensuse.org/repositories/home:/colomboem/xUbuntu_12.04/amd64/dukto_6.0-1_amd64.deb &&
-  sudo gdebi dukto_6.0-1_amd64.deb ;;
-[Nn]*) echo "Thank you. Dukto Installation aborted." ;;
-esac
-
 #PIP
 read -p "Do you want to install Python3 PIP? (Y/N): " yn
 case $yn in
