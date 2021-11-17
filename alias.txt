@@ -18,6 +18,7 @@ alias gc="git commit"
 alias gcm="git commit -m"
 alias gps="git push"
 alias gpl="git pull"
+alias updateMachine="sudo apt update -y && sudo apt upgrade -y && sudo apt full-upgrade -y"
 
 gmerge (){
 	git checkout $1 && git merge $2 && git pull && git push && git checkout $2 

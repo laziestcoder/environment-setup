@@ -20,21 +20,6 @@ case $yn in
 [Nn]*) echo "Thank you. VIM Installation aborted." ;;
 esac
 
-#Tweak Tool
-read -p "Do you want to install Unity-Tweak-Tool? (Y/N): " yn
-case $yn in
-[Yy]*) sudo apt install unity &&
-  sudo apt-get install unity-tweak-tool gnome-tweak-tool &&
-  sudo apt install dconf-tools &&
-  #gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
-  #gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
-  #gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode FIXED
-  #gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 64
-  #gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true;;
-  echo "Installation Unity-Tweak-Tool successful." ;;
-[Nn]*) echo "Thank you. Unity-Tweak-Tool Installation aborted." ;;
-esac
-
 #Chrome
 read -p "Do you want to install Chrome? (Y/N): " yn
 case $yn in
