@@ -2,7 +2,7 @@
 read -p "Do you want to install Docker? (Y/N): " yn
 case $yn in
 [Yy]*) sudo apt-get install docker-ce -y && apt-cache madison docker-ce &&
-  sudo chmod 666 /var/run/docker.sock ;;
+	sudo usermod -aG docker ${USER} ;;
 [Nn]*) echo "Thank you. Docker Installation aborted." ;;
 esac
 
