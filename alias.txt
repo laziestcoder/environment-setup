@@ -1,8 +1,12 @@
 #my aliases
+
 alias cl="clear"
 alias dcstart="docker-compose up -d"
 alias dcstop="docker-compose stop"
+alias dcallstop="docker stop \$(docker ps -aq)"
 alias dcedit="vim docker-compose.yml"
+alias dcremoveallimages="docker image rm -f \$(docker image ls -aq)"
+alias dcremoveallcontainers="docker container rm -f \$(docker container ls -aq)"
 alias bashedit="cd && vim .bashrc"
 alias bashrs="cd && source .bashrc"
 alias pf="poweroff"
@@ -18,7 +22,11 @@ alias gc="git commit"
 alias gcm="git commit -m"
 alias gps="git push"
 alias gpl="git pull"
+
+
 alias updateMachine="sudo apt update -y && sudo apt upgrade -y && sudo apt full-upgrade -y"
+alias myjupyter="cd && cd learning/my_jupyter_works/ && source my_jupyter_works/bin/activate && jupyter notebook"
+alias mvnCleanInstallSkipTest="mvn clean install -DskipTests"
 
 gmerge (){
 	git checkout $1 && git merge $2 && git pull && git push && git checkout $2 
@@ -38,5 +46,4 @@ goto () {
 	   echo "Directory $1 not found." 
 	fi
 }
-
 
