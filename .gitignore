@@ -1,6 +1,6 @@
 .idea
 *.tar.gz*
-
+*.deb
 *.exe*
 *.jar*
 *.zip*
