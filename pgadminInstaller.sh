@@ -1,2 +1,2 @@
-sudo apt install pgadmin4
-sudo apt install pgadmin4-desktop
+sudo apt install pgadmin3
+sudo apt install pgadmin3-data
