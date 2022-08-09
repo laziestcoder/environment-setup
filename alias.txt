@@ -22,28 +22,33 @@ alias gc="git commit"
 alias gcm="git commit -m"
 alias gps="git push"
 alias gpl="git pull"
-
+alias gmps="git push --recurse-submodules=on-demand"
+alias gmpl="git pull --recurse-submodules"
 
 alias updateMachine="sudo apt update -y && sudo apt upgrade -y && sudo apt full-upgrade -y"
 alias myjupyter="cd && cd learning/my_jupyter_works/ && source my_jupyter_works/bin/activate && jupyter notebook"
 alias mvnCleanInstallSkipTest="mvn clean install -DskipTests"
 
-gmerge (){
+
+#my alias function
+
+killport () {
+	PID=$(sudo lsof -t -i:$1)
+        sudo kill -9 ${PID}
+}
+
+gmerge () {
 	git checkout $1 && git merge $2 && git pull && git push && git checkout $2 
 }
 
-#my alias function
 goto () {
 	cd ~/workspace/
 	if [ -d "$1" ]; then
            cd "$1"
 	   if [ -d "project" ]; then
 		cd project/
-     	   else
-   	      echo "Directory 'Project' missing";
 	   fi	      
 	else
-	   echo "Directory $1 not found." 
+	   echo "Directory '$1' not found." 
 	fi
 }
-
