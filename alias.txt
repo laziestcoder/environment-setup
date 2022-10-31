@@ -10,6 +10,7 @@ alias dcremoveallcontainers="docker container rm -f \$(docker container ls -aq)"
 alias bashedit="cd && vim .bashrc"
 alias bashrs="cd && source .bashrc"
 alias pf="poweroff"
+alias checkAllService="systemctl --type service --state running"
 
 #git aliases
 
@@ -25,9 +26,12 @@ alias gpl="git pull"
 alias gmps="git push --recurse-submodules=on-demand"
 alias gmpl="git pull --recurse-submodules"
 
+#machine aliases
 alias updateMachine="sudo apt update -y && sudo apt upgrade -y && sudo apt full-upgrade -y"
 alias myjupyter="cd && cd learning/my_jupyter_works/ && source my_jupyter_works/bin/activate && jupyter notebook"
 alias mvnCleanInstallSkipTest="mvn clean install -DskipTests"
+alias mavenRepoRemove="sudo rm -rf ~/.m2"
+alias netNtlp="netstat -ntlp"
 
 
 #my alias function
@@ -37,8 +41,12 @@ killport () {
         sudo kill -9 ${PID}
 }
 
+checkPort (){
+	sudo lsof -i :$1
+}
+
 gmerge () {
-	git checkout $1 && git merge $2 && git pull && git push && git checkout $2 
+	git checkout $1 && git merge $2 && git pull && git push && git checkout $2
 }
 
 goto () {
@@ -47,8 +55,8 @@ goto () {
            cd "$1"
 	   if [ -d "project" ]; then
 		cd project/
-	   fi	      
+	   fi
 	else
-	   echo "Directory '$1' not found." 
+	   echo "Directory '$1' not found."
 	fi
 }
