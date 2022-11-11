@@ -45,6 +45,10 @@ checkPort (){
 	sudo lsof -i :$1
 }
 
+catGitConfig (){
+        cat $1/.git/config
+}
+
 gmerge () {
 	git checkout $1 && git merge $2 && git pull && git push && git checkout $2
 }
