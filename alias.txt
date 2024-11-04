@@ -25,6 +25,7 @@ alias gps="git push"
 alias gpl="git pull"
 alias gmps="git push --recurse-submodules=on-demand"
 alias gmpl="git pull --recurse-submodules"
+alias gitclone="git clone"
 
 #machine aliases
 alias updateMachine="sudo apt update -y && sudo apt upgrade -y && sudo apt full-upgrade -y"
@@ -32,6 +33,10 @@ alias myjupyter="cd && cd learning/my_jupyter_works/ && source my_jupyter_works/
 alias mvnCleanInstallSkipTest="mvn clean install -DskipTests"
 alias mavenRepoRemove="sudo rm -rf ~/.m2"
 alias netNtlp="netstat -ntlp"
+
+#version change alias
+
+alias changeJavaVersionTo='bash ~/workspace/environment-setup/changeJavaVersionTo.sh'
 
 
 #my alias function
@@ -64,3 +69,7 @@ goto () {
 	   echo "Directory '$1' not found."
 	fi
 }
+
+
+# end of my alias
+
