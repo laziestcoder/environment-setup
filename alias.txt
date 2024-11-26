@@ -1,4 +1,4 @@
-#my aliases
+# start of my aliases
 
 alias cl="clear"
 alias dcstart="docker-compose up -d"
@@ -26,6 +26,8 @@ alias gpl="git pull"
 alias gmps="git push --recurse-submodules=on-demand"
 alias gmpl="git pull --recurse-submodules"
 alias gitclone="git clone"
+alias git-drop-commit="git_drop_commit"
+
 
 #machine aliases
 alias updateMachine="sudo apt update -y && sudo apt upgrade -y && sudo apt full-upgrade -y"
@@ -40,6 +42,33 @@ alias changeJavaVersionTo='bash ~/workspace/environment-setup/changeJavaVersionT
 
 
 #my alias function
+
+git_drop_commit() {
+    if [ -z "$1" ]; then
+        echo "Usage: git drop-commit <commit-hash-or-prefix>"
+        return 1
+    fi
+
+    local commit_hash="$1"
+
+    # Check if the commit exists
+    if ! git rev-parse --verify "$commit_hash" &>/dev/null; then
+        echo "Error: Commit '$commit_hash' not found."
+        return 1
+    fi
+
+    echo "Dropping commit: $commit_hash"
+
+    # Start rebase and drop the commit
+    git rebase --onto "$commit_hash"^ "$commit_hash"
+
+    if [ $? -eq 0 ]; then
+        echo "Commit $commit_hash successfully dropped."
+    else
+        echo "Rebase failed. Please resolve conflicts and continue."
+        return 1
+    fi
+}
 
 killport () {
 	PID=$(sudo lsof -t -i:$1)
@@ -72,4 +101,3 @@ goto () {
 
 
 # end of my alias
-
