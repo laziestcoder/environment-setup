@@ -27,12 +27,18 @@ alias gmps="git push --recurse-submodules=on-demand"
 alias gmpl="git pull --recurse-submodules"
 alias gitclone="git clone"
 alias git-drop-commit="git_drop_commit"
+alias grbi="git rebase -i"
+alias gfall="git fetch --all"
+alias gitchk="git checkout"
 
+# language aliases
+
+alias python="python3"
 
 #machine aliases
 alias updateMachine="sudo apt update -y && sudo apt upgrade -y && sudo apt full-upgrade -y"
 alias myjupyter="cd && cd learning/my_jupyter_works/ && source my_jupyter_works/bin/activate && jupyter notebook"
-alias mvnCleanInstallSkipTest="mvn clean install -DskipTests"
+alias mvnCleanInstallSkipTest="mvn -T 1.5C clean install -DskipTests"
 alias mavenRepoRemove="sudo rm -rf ~/.m2"
 alias netNtlp="netstat -ntlp"
 
@@ -45,7 +51,7 @@ alias changeJavaVersionTo='bash ~/workspace/environment-setup/changeJavaVersionT
 
 git_drop_commit() {
     if [ -z "$1" ]; then
-        echo "Usage: git drop-commit <commit-hash-or-prefix>"
+        echo "Usage: git-drop-commit <commit-hash-or-prefix>"
         return 1
     fi
 
@@ -70,7 +76,7 @@ git_drop_commit() {
     fi
 }
 
-killport () {
+killPort () {
 	PID=$(sudo lsof -t -i:$1)
         sudo kill -9 ${PID}
 }
