@@ -2,7 +2,8 @@
 read -p "Do you want to install Docker? (Y/N): " yn
 case $yn in
 [Yy]*)  sudo apt install docker.io && 
-	sudo usermod -aG docker ${USER} ;;
+	sudo usermod -aG docker ${USER} &&
+	newgrp docker;;
 [Nn]*) echo "Thank you. Docker Installation aborted." ;;
 esac
 
