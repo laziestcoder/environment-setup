@@ -49,6 +49,17 @@ alias changeJavaVersionTo='bash ~/workspace/environment-setup/changeJavaVersionT
 
 #my alias function
 
+gitcheckout () {
+        branch_name="$1"
+        git checkout "$branch_name"
+}
+
+
+gitCheckoutOrigin () {
+	branch_name="$1"
+	git checkout origin/"$branch_name"
+}
+
 git_drop_commit() {
     if [ -z "$1" ]; then
         echo "Usage: git-drop-commit <commit-hash-or-prefix>"
@@ -74,6 +85,14 @@ git_drop_commit() {
         echo "Rebase failed. Please resolve conflicts and continue."
         return 1
     fi
+}
+
+gitReverseCommitX () {
+   echo "executing git reset --soft HEAD^$1"
+   git reset --soft HEAD^$1
+
+   echo "executing git restore --staged ."
+   git restore --staged .
 }
 
 killPort () {
